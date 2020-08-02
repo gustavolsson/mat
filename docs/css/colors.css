@@ -1,0 +1,27 @@
+.c0 {
+    /* green */
+    background-color: rgb(180, 237, 168);
+    border-color: rgb(180, 237, 168);
+    color: rgb(0, 0, 0, 0.4);
+}
+
+.c1 {
+    /* blue */
+    background-color: rgb(193, 216, 247);
+    border-color: rgb(193, 216, 247);
+    color: rgb(0, 0, 0, 0.4);
+}
+
+.c2 {
+    /* red */
+    background-color: rgb(247, 226, 193);
+    border-color: rgb(247, 226, 193);
+    color: rgb(0, 0, 0, 0.4);
+}
+
+.c3 {
+    /* yellow */
+    background-color: rgb(252, 245, 146);
+    border-color: rgb(252, 245, 146);
+    color: rgb(0, 0, 0, 0.4);
+}

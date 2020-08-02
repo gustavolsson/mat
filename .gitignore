@@ -1,4 +1,6 @@
-# My own
+# Custom
+**/build/*
+
 *.DS_Store
 
 # Prerequisites
