@@ -1,0 +1,41 @@
+body {
+    font-family: Courier, serif;
+    font-size: 12pt;
+    max-width: 600px;
+    /* background-color: rgb(255, 246, 235); */
+}
+
+blockquote {
+    background-color: black;
+    color: white;
+    padding: 10px 10px 10px 10px;
+    border-radius: 16px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.step {
+    position: relative;
+}
+
+span {
+    color: white;
+    padding: 2px 2px 2px 2px;
+}
+
+.info {
+    border-left-width: 6px;
+    border-left-style: solid;
+
+    display: inline;
+    background-color: white !important;
+    color: black !important;
+    padding-left: 10px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 30%;
+    height: 100%;
+}
