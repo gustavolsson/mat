@@ -1,6 +1,6 @@
 # Immelnsallad
 
-[img/1_immelnsallad.jpg]
+[img/2_immelnsallad.jpg]
 
 > Åt den första gången vid Immeln med Olga, Katarina och Izzy. Bra för utflykt!
 
