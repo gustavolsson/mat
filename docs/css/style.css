@@ -5,6 +5,10 @@ body {
     /* background-color: rgb(255, 246, 235); */
 }
 
+img {
+    max-width: 100%;
+}
+
 blockquote {
     background-color: black;
     color: white;

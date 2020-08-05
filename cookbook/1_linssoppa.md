@@ -2,8 +2,6 @@
 
 > God lätt soppa från ICA
 
-Lite mer info här!!!
-
 8 portioner, 3 dl/portion
 
 * 2 gul lök

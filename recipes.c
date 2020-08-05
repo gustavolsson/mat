@@ -7,16 +7,25 @@
 typedef enum {
     RECIPE_LOADED,
     RECIPE_TITLE,
+    RECIPE_IMAGE,
     RECIPE_SUBTITLE,
     RECIPE_DESCRIPTION,
     RECIPE_STEP,
     RECIPE_INFO,
 } recipe_state;
 
-static void trim_right(char* str) {
+static bool is_ws(char c) {
+    return isspace(c);
+}
+
+static bool is_right_bracket(char c) {
+    return c == ']';
+}
+
+static void trim_right(char* str, bool (*pred)(char)) {
     int len = strlen(str);
     for (int i = len - 1; i >= 0; --i) {
-        if (isspace(str[i])) {
+        if (pred(str[i])) {
             str[i] = '\0';
         } else {
             break;
@@ -24,17 +33,17 @@ static void trim_right(char* str) {
     }
 }
 
-static char* trim_left(char* str) {
+static char* trim_left(char* str, bool (*pred)(char)) {
     char* result = str;
-    while (isspace(*result)) {
+    while (pred(*result)) {
         ++result;
     }
     return result;
 }
 
 static char* trim(char* str) {
-    trim_right(str);
-    return trim_left(str);
+    trim_right(str, &is_ws);
+    return trim_left(str, &is_ws);
 }
 
 static char* file_ext(const char* path) {
@@ -55,15 +64,18 @@ static void emit_head(FILE* html, const char* title) {
 }
 
 static void emit_body_title(FILE* html, const char* title) {
-    fprintf(html, "<div><h1>%s</h1></div>\n", title);
+    fprintf(html, "<div><h1>%s</h1></div>", title);
+}
+static void emit_body_img(FILE* html, const char* path) {
+    fprintf(html, "<div><img src=\"%s\"></div>", path);
 }
 
 static void emit_body_subtitle(FILE* html, const char* subtitle) {
-    fprintf(html, "<div><blockquote>%s</blockquote></div>\n", subtitle);
+    fprintf(html, "<div><blockquote>%s</blockquote></div>", subtitle);
 }
 
 static void emit_body_description(FILE* html, const char* info) {
-    fprintf(html, "<div><p>%s</p></div>\n", info);
+    fprintf(html, "<div><p>%s</p></div>", info);
 }
 
 static void emit_body_step(FILE* html, const char* text, bool step_started) {
@@ -112,7 +124,7 @@ bool emit_recipe(FILE* recipe, FILE* html) {
             }
             case '>': {
                 // subtitle or info
-                if (state == RECIPE_TITLE) {
+                if (state == RECIPE_TITLE || state == RECIPE_IMAGE) {
                     state = RECIPE_SUBTITLE;
                     emit_body_subtitle(html, rest_line);
                 } else if (state == RECIPE_STEP && step_started) {
@@ -123,6 +135,15 @@ bool emit_recipe(FILE* recipe, FILE* html) {
                 } else {
                     return false;
                 }
+                break;
+            }
+            case '[': {
+                if (state != RECIPE_TITLE) {
+                    return false;
+                }
+                state = RECIPE_IMAGE;
+                trim_right(rest_line, &is_right_bracket);
+                emit_body_img(html, rest_line);
                 break;
             }
             case '*': {
@@ -210,7 +231,9 @@ int main(int argc, char* argv[]) {
 
                 printf("Converting %s to %s...\n", src_path, dst_path);
 
-                convert_files(src_path, dst_path);
+                if (!convert_files(src_path, dst_path)) {
+                    puts("-> Conversion failed!");
+                }
             }
         }
         closedir(dir);
