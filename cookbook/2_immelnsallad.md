@@ -8,11 +8,11 @@
 
 * 3 dl kvarngryn
 
-> koka i 1.7 l vatten med 1 krm salt i 12 minuter
+> koka i 1,2 l vatten med 1 krm salt i 12 minuter
 
 * 1 dl mandel - hacka
 * 2 vitlök - pressa
-* 0.75-1 dl olivolja
+* 0,75-1 dl olivolja
 * 1 kruka basilika
 * 2 msk ciitron
 * 1 krm salt
