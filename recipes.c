@@ -57,6 +57,7 @@ static void emit_html_start(FILE* html) {
 static void emit_head(FILE* html, const char* title) {
     fputs("<head>", html);
     fprintf(html, "<title>%s</title>", title);
+    fputs("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">", html);
     fputs("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">", html);
     fputs("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/colors.css\">", html);
     fputs("</head>", html);
