@@ -219,11 +219,11 @@ int main(int argc, char* argv[]) {
                 dst_dir_len + dst_ext_len + file_name_len < 1024 &&
                 file_name_ext != NULL && strcmp(file_name_ext, src_ext) == 0) {
 
-                char src_path[1024];
+                char src_path[1024] = { 0 };
                 strcpy(src_path, src_dir);
                 strcpy(&src_path[src_dir_len], file_name);
 
-                char dst_path[1024];
+                char dst_path[1024] = { 0 };
                 strcpy(dst_path, dst_dir);
                 strcpy(&dst_path[dst_dir_len], file_name);
                 char* dst_path_ext = strstr(dst_path, src_ext);

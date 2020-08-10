@@ -14,7 +14,7 @@
 * 2 vitlök - pressa
 * 0,75-1 dl olivolja
 * 1 kruka basilika
-* 2 msk ciitron
+* 2 msk citronsaft
 * 1 krm salt
 
 > mixa i matberedare, lägg i bunke
@@ -22,6 +22,6 @@
 * 1 paket kikärter
 * 8 små tomater - halvera
 * 1 paket babyspenat
-* 1 paket fetaost
+* 1 paket fetaost - smula
 
 > ha i, blanda

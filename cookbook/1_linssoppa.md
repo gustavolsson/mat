@@ -1,5 +1,7 @@
 # Röd linssoppa
 
+[img/1_linssoppa.jpg]
+
 > God lätt soppa från ICA
 
 8 portioner, 3 dl/portion
