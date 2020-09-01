@@ -18,11 +18,13 @@ blockquote {
 
 ul {
     list-style-type: none;
+    width: 60%;
 }
 
 .step {
     position: relative;
     min-height: 50px;
+    width: 100%
 }
 
 span {
