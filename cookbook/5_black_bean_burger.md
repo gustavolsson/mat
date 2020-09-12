@@ -1,5 +1,7 @@
 # Black bean burger
 
+[img/5_blackbeanburger.jpg]
+
 > Med chili och sesamfrön
 
 4 portioner
